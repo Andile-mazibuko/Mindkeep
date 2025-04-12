@@ -24,7 +24,7 @@ app.add_middleware(
 
 @app.post("/add_note")
 def addNote(dict: Dict = Body(...)):
-    note: Note = Note(title=dict['note_title'],content=dict['content'],owner=1)
+    note: Note = Note(title=dict['title'],content=dict['content'],owner=1)
     session.add(note)
     session.commit()
 

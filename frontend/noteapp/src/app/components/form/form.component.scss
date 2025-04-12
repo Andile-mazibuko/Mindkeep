@@ -1,0 +1,35 @@
+.form-cont{
+    width: 30%;
+    margin-top: 5%;
+    margin-left: 2%;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 128, 255, 0.2),0 6px 20px rgba(0, 128, 255, 0.15);
+}
+form{
+    width: 100%;
+    display: block;
+}
+mat-form-field{
+    width: 70%;
+    height: 10%;
+    margin-left: 15%;
+    position: relative;
+}
+h2{
+    padding-top: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: rgb(53, 49, 105);
+    font-family: monospace;
+}
+.btn-cont{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10%;
+}
+button{
+    background: linear-gradient(to left,rgb(255, 123, 240,0.3) , rgb(73, 73, 255,0.3) 90%) !important;
+    color: rgb(206, 206, 206) !important;
+}
