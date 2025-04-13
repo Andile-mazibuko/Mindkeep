@@ -37,3 +37,9 @@ def getNotes():
 @app.get("/note/{note_id}")
 def getNote(note_id:int):
     return session.query(Note).filter(Note.note_id == note_id).first()
+
+@app.delete("/delete_note/{note_id}")
+def deleteNote(note_id:int):
+    delete_note = session.query(Note).filter(note_id == Note.note_id).first()
+    session.delete(delete_note)
+    session.commit()

@@ -10,6 +10,9 @@ import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule,MatInputModule,MatButtonModule,HttpClientModule
+    AppRoutingModule,FormsModule,MatInputModule,MatButtonModule,
+    HttpClientModule,MatCardModule,MatIconModule
   ],
   providers: [
     provideClientHydration(),

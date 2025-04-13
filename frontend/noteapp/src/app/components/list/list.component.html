@@ -1,1 +1,20 @@
-<p>list works!</p>
+<div class="list-cont">
+    <div class="note" *ngFor="let note of notes">
+        <mat-card class="card" appearance="outlined">
+            <mat-card-title>{{ note.title }}</mat-card-title>
+            <img mat-card-image src="assets/favicon.ico" alt="">
+            <mat-card-content>
+                {{ note.content }}
+            </mat-card-content>
+            <div class="btn-cont">
+                <button mat-icon-button color="primary" aria-label="Edit" (click)="editNote(note)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="primary" aria-label="Edit" (click)="deleteNote(note)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </mat-card>
+
+    </div>
+</div>

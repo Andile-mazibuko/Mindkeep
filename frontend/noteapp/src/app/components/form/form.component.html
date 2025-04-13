@@ -1,16 +1,22 @@
-<div class="form-cont">
-    <form action="" (ngSubmit)="onFormSubmit()">
-        <h2>NOTE FORM</h2>
-        <mat-form-field appearance="outline">
-            <mat-label>Title</mat-label>
-            <input matInput name="title" [(ngModel)]="note.title">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-            <mat-label>content</mat-label>
-            <textarea matInput name="content" [(ngModel)]="note.content"></textarea>
-        </mat-form-field>
-        <div class="btn-cont">
-            <button type="submit" mat-flat-button>Add Note</button>
-        </div>
-    </form>
+
+<div class="main-cont">
+    <div class="form-cont">
+        <form action="" (ngSubmit)="onFormSubmit()">
+            <h2>NOTE FORM</h2>
+            <mat-form-field appearance="outline">
+                <mat-label>Title</mat-label>
+                <input matInput name="title" [(ngModel)]="note.title">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>content</mat-label>
+                <textarea matInput name="content" [(ngModel)]="note.content"></textarea>
+            </mat-form-field>
+            <div class="btn-cont">
+                <button type="submit" mat-flat-button>Add Note</button>
+            </div>
+        </form>
+    </div>
+    <div class="list-cont">
+        <app-list [acceptNote]="note"></app-list>
+    </div>
 </div>

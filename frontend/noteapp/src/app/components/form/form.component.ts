@@ -9,16 +9,15 @@ import { NoteService } from '../../services/note.service';
 })
 export class FormComponent {
 
-  note: Note = {title: '',content:''
-    
-  }
+  note: Note = {title: '',content:''}
+  
   constructor(private noteService: NoteService){}
-
 
   onFormSubmit(){
     
     this.noteService.addNote(this.note).subscribe(() => {
       this.note = {title: '',content:''}
+      //TODO: UPDATE THE NOTES LIST
     })    
   }
 }

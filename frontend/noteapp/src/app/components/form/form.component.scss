@@ -1,9 +1,24 @@
+.main-cont {
+    display: flex;
+    justify-content: space-between; /* optional: or use center/start */
+    align-items: flex-start;        /* aligns at the top */
+    width: 100%;
+}
+
 .form-cont{
     width: 30%;
     margin-top: 5%;
     margin-left: 2%;
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0, 128, 255, 0.2),0 6px 20px rgba(0, 128, 255, 0.15);
+    position: relative;
+}
+.list-cont{
+    width: 60%;
+    position: relative;
+    margin-top: 5%;
+    margin-right: 5%; 
+    
 }
 form{
     width: 100%;
