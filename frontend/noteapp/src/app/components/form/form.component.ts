@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Note } from '../../interfaces/note';
+import { NoteService } from '../../services/note.service';
 
 @Component({
   selector: 'app-form',
@@ -8,17 +9,16 @@ import { Note } from '../../interfaces/note';
 })
 export class FormComponent {
 
-  note: Note = {
-    title: '',
-    content:''
+  note: Note = {title: '',content:''
     
   }
+  constructor(private noteService: NoteService){}
+
 
   onFormSubmit(){
-    console.log(this.note)
-    this.note = {
-      title: '',
-      content:''
-    }
+    
+    this.noteService.addNote(this.note).subscribe(() => {
+      this.note = {title: '',content:''}
+    })    
   }
 }

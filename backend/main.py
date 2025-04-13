@@ -1,7 +1,6 @@
-from ast import Dict
-from csv import Dialect
 from fastapi import Body, FastAPI
 from Database import session,NoteBase,engine
+from schema import NoteCreate
 from models import Note, User
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -23,10 +22,13 @@ app.add_middleware(
 )
 
 @app.post("/add_note")
-def addNote(dict: Dict = Body(...)):
-    note: Note = Note(title=dict['title'],content=dict['content'],owner=1)
+def addNote(note: NoteCreate):
+    note: Note = Note(title=note.title,content=note.content,owner=1)
     session.add(note)
     session.commit()
+
+    return note
+    
 
 @app.get("/notes")
 def getNotes():
