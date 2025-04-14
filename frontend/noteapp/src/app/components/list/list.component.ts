@@ -1,6 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input,Output ,OnInit } from '@angular/core';
 import { NoteService } from '../../services/note.service';
 import { Note } from '../../interfaces/note';
+import { Router } from '@angular/router';
+import {MatDialog} from '@angular/material/dialog'
+import { EditComponent } from '../edit/edit.component';
 
 @Component({
   selector: 'app-list',
@@ -10,8 +13,9 @@ import { Note } from '../../interfaces/note';
 export class ListComponent implements OnInit{
   
   notes: Note[] = []
-  constructor(private noteServ: NoteService){}
-  @Input() acceptNote!: Note;
+  constructor(private matDialog: MatDialog ,private noteServ: NoteService,private router: Router){
+   }
+ 
 
   ngOnInit(): void {
     this.noteServ.getNotes().subscribe((resp: Note[]) =>{
@@ -19,7 +23,13 @@ export class ListComponent implements OnInit{
     })
   }
   editNote(note: Note){
-
+    //this.noteServ.changeUpdate(true)
+    //this.toEdit.emit(note)
+    this.noteServ.setNoteToEdit(note)
+    //this.router.navigate(["/edit"])
+    const openDialog = this.matDialog.open(EditComponent,{data:note})
+  
+    
   }
   deleteNote(note:Note){
 

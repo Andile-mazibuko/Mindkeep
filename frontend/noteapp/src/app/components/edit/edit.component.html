@@ -1,0 +1,13 @@
+<form action="" #form="ngForm"  >
+    <mat-form-field appearance="outline" (ngSubmit)="editNote()">
+        <mat-label>title</mat-label>
+        <input matInput [(ngModel)]="data.title" name="title" type="text">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>content</mat-label>
+        <textarea matInput [(ngModel)]="data.content" name="content" type="text"></textarea>
+    </mat-form-field>
+
+        <button  mat-button (click)="editNote()">Edit Note</button>
+        <button type="button" mat-button (click)="closeDialog()">Close</button>
+</form>

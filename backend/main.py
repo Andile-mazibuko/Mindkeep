@@ -1,4 +1,5 @@
 from fastapi import Body, FastAPI
+from sqlalchemy import null
 from Database import session,NoteBase,engine
 from schema import NoteCreate
 from models import Note, User
@@ -27,7 +28,15 @@ def addNote(note: NoteCreate):
     session.add(note)
     session.commit()
 
-    return note
+
+@app.put("/update_note/{note_id}")
+def updateNote(note_id:int, note: NoteCreate):
+    updated_note = session.query(Note).filter(Note.note_id == note_id).first()
+    
+    if updated_note is not None:
+        updated_note.title = note.title
+        updated_note.content = note.content
+        session.commit()
     
 
 @app.get("/notes")

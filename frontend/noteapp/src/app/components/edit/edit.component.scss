@@ -1,0 +1,15 @@
+form{
+    width: 400px;
+
+}
+mat-form-field{
+    padding-top: 10%;
+    width: 100% !important;
+}
+@media (forced-colors: active) {
+    body {
+      background-color: black;
+      color: white;
+    }
+    /* Additional styles to enhance the UI for forced color mode */
+  }

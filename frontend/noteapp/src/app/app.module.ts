@@ -12,18 +12,21 @@ import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
+import { EditComponent } from './components/edit/edit.component';
+import {MatDialogModule} from '@angular/material/dialog'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
-    ListComponent
+    ListComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,FormsModule,MatInputModule,MatButtonModule,
-    HttpClientModule,MatCardModule,MatIconModule
+    HttpClientModule,MatCardModule,MatIconModule,MatDialogModule
   ],
   providers: [
     provideClientHydration(),
